@@ -34,7 +34,6 @@
 }
 
 .card {
-  /* background: rgba(255, 255, 255, 0.3); */
   border-radius: 16px;
   border: 2px solid #79c800;
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
@@ -42,9 +41,6 @@
   height: 188px;
   flex: 0 1 23.782%;
   backdrop-filter: blur(8px);
-
-  /* position: relative;
-  z-index: 10; */
 }
 .card:hover {
   background: linear-gradient(
@@ -58,7 +54,6 @@
 .card__body {
   display: flex;
   justify-content: space-between;
-  /* padding: 15px; */
 }
 
 .card__name {
@@ -71,32 +66,45 @@
 
   display: flex;
   align-items: end;
+  margin-bottom: -30px;
 }
 .card__images {
-  /* display: block; */
   background-repeat: no-repeat;
   background-size: contain;
-  /* object-fit: cover; */
-  /* background-position: 0px 0px; */
   width: 208px;
   height: 188px;
+  margin-top: -30px;
 }
-.card__image-1 {
-  background-image: url(images/pesticides.svg);
+.card__image-1-diactivate {
+  display: block;
 }
-.card__image-2 {
-  background-image: url(images/cultures.svg);
+.card__image-1-active {
+  display: none;
 }
-.card__image-3 {
-  background-image: url(images/pests.svg);
+.card__image-2-diactivate {
+  display: block;
 }
-.card__image-4 {
-  background-image: url(images/activeIngredients.svg);
+.card__image-2-active {
+  display: none;
 }
+.card__image-3-diactivate {
+  display: block;
+}
+.card__image-3-active {
+  display: none;
+}
+.card__image-4-diactivate {
+  display: block;
+}
+.card__image-4-active {
+  display: none;
+}
+
+/* background images  */
 
 .leaf-green {
   position: absolute;
-  top: 120px;
+  top: 220px;
   left: 0px;
 }
 .decor {
@@ -111,7 +119,7 @@
 }
 .leaf-brown {
   position: absolute;
-  bottom: 145px;
+  bottom: 280px;
   right: 550px;
   z-index: -1;
 }
@@ -123,7 +131,7 @@
 
 /* Media */
 
-@media (max-width: 1400px) {
+@media (max-width: 1550px) {
   .categories__cards {
     flex-wrap: wrap;
   }
@@ -155,46 +163,115 @@ span::before {
   position: absolute;
   z-index: -3;
 }
-span {
+.circles-1 {
   width: 100px;
   height: 100px;
 
-  animation: cards-circle-100 linear 4s infinite alternate;
+  animation: cards-1-circle-100 linear 4s infinite alternate;
 }
-span::after {
+.circles-1::after {
   content: "";
   width: 40px;
   height: 40px;
 
-  animation: cards-circle-40 linear 5s infinite alternate;
+  animation: cards-1-circle-40 linear 5s infinite alternate;
 }
-span::before {
+.circles-1::before {
   content: "";
   width: 20px;
   height: 20px;
   background-color: rgba(253, 250, 250, 0.3);
 
-  animation: cards-circle-20 linear 6s infinite alternate;
+  animation: cards-1-circle-20 linear 6s infinite alternate;
+}
+.circles-2 {
+  width: 100px;
+  height: 100px;
+
+  animation: cards-2-circle-100 linear 4s infinite alternate;
+}
+.circles-2::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+
+  animation: cards-2-circle-80 linear 5s infinite alternate;
+}
+.circles-2::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: rgba(253, 250, 250, 0.3);
+
+  animation: cards-2-circle-50 linear 6s infinite alternate;
+}
+.circles-3 {
+  width: 120px;
+  height: 120px;
+
+  animation: cards-3-circle-120 linear 4s infinite alternate;
+}
+.circles-3::after {
+  content: "";
+  width: 80px;
+  height: 80px;
+
+  animation: cards-3-circle-80 linear 5s infinite alternate;
+}
+.circles-3::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: rgba(253, 250, 250, 0.3);
+
+  animation: cards-3-circle-60 linear 6s infinite alternate;
+}
+.circles-4 {
+  width: 100px;
+  height: 100px;
+
+  animation: cards-1-circle-100 linear 4s infinite alternate;
+}
+.circles-4::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+
+  animation: cards-1-circle-40 linear 5s infinite alternate;
+}
+.circles-4::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: rgba(253, 250, 250, 0.3);
+
+  animation: cards-1-circle-20 linear 6s infinite alternate;
 }
 
-.leaf-green {
+.anim-green {
   animation: leaf-green linear 0.6s infinite alternate;
 }
-.leaf-brown {
+.anim-brown {
   animation: leaf-brown linear 0.6s infinite alternate;
 }
 
-.categories__cards_card-1:hover .card__image-1 {
-  background-image: url(images/hover/pesticidesHover.svg);
+.categories__cards_card-1:hover .card__image-1-active {
+  display: block;
 }
-.categories__cards_card-1:hover span,
-span::after,
-span::before {
+.categories__cards_card-1:hover .card__image-1-diactivate {
+  display: none;
+}
+.categories__cards_card-1:hover .circles-1,
+.circles-1::after,
+.circles-1::before {
   display: inline-block;
 }
 
-.categories__cards_card-2:hover .card__image-2 {
-  background-image: url(images/hover/culturesHover.svg);
+.categories__cards_card-2:hover .card__image-2-active {
+  display: block;
+}
+.categories__cards_card-2:hover .card__image-2-diactivate {
+  display: none;
 }
 .categories__cards_card-2:hover span,
 span::after,
@@ -202,8 +279,11 @@ span::before {
   display: inline-block;
 }
 
-.categories__cards_card-3:hover .card__image-3 {
-  background-image: url(images/hover/pestsHover.svg);
+.categories__cards_card-3:hover .card__image-3-active {
+  display: block;
+}
+.categories__cards_card-3:hover .card__image-3-diactivate {
+  display: none;
 }
 .categories__cards_card-3:hover span,
 span::after,
@@ -211,8 +291,11 @@ span::before {
   display: inline-block;
 }
 
-.categories__cards_card-4:hover .card__image-4 {
-  background-image: url(images/hover/activeIngredientsHover.svg);
+.categories__cards_card-4:hover .card__image-4-active {
+  display: block;
+}
+.categories__cards_card-4:hover .card__image-4-diactivate {
+  display: none;
 }
 .categories__cards_card-4:hover span,
 span::after,
@@ -222,26 +305,28 @@ span::before {
 
 @keyframes leaf-green {
   0% {
-    top: 120px;
-    left: 0px;
+    top: 220px;
+    left: 10px;
   }
   100% {
-    top: 123px;
-    left: 11px;
+    top: 225px;
+    left: 13px;
   }
 }
 @keyframes leaf-brown {
   0% {
-    bottom: 145px;
+    bottom: 280px;
     right: 550px;
   }
   100% {
-    bottom: 142px;
-    right: 547px;
+    bottom: 285px;
+    right: 545px;
   }
 }
 
-@keyframes cards-circle-100 {
+/* animation for card #1  */
+
+@keyframes cards-1-circle-100 {
   0% {
     top: -20px;
     left: -20px;
@@ -259,7 +344,7 @@ span::before {
     height: 150px;
   }
 }
-@keyframes cards-circle-40 {
+@keyframes cards-1-circle-40 {
   0% {
     top: 10px;
     left: 300px;
@@ -277,7 +362,7 @@ span::before {
     height: 20px;
   }
 }
-@keyframes cards-circle-20 {
+@keyframes cards-1-circle-20 {
   0% {
     top: 100px;
     left: 300px;
@@ -291,6 +376,118 @@ span::before {
   100% {
     top: 100px;
     left: -15px;
+    width: 20px;
+    height: 20px;
+  }
+}
+/* animation for card #2  */
+
+@keyframes cards-2-circle-100 {
+  0% {
+    top: -20px;
+    left: -20px;
+  }
+  70% {
+    top: 50px;
+    left: 140px;
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    top: 10px;
+    left: 280px;
+    width: 150px;
+    height: 150px;
+  }
+}
+@keyframes cards-2-circle-80 {
+  0% {
+    top: 100px;
+    left: 300px;
+  }
+  50% {
+    top: 50px;
+    left: 140px;
+    width: 200px;
+    height: 200px;
+  }
+  100% {
+    top: 10px;
+    left: 280px;
+    width: 150px;
+    height: 150px;
+  }
+}
+@keyframes cards-2-circle-50 {
+  0% {
+    top: 100px;
+    left: 30px;
+  }
+  50% {
+    top: 50px;
+    left: 40px;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 50px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+}
+/* animation for card #3  */
+
+@keyframes cards-3-circle-120 {
+  0% {
+    top: 10px;
+    left: 200px;
+  }
+  50% {
+    top: 30px;
+    left: 140px;
+    width: 50px;
+    height: 50px;
+  }
+  100% {
+    top: 50px;
+    left: 20px;
+    width: 150px;
+    height: 150px;
+  }
+}
+@keyframes cards-3-circle-80 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  50% {
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 80px;
+    height: 80px;
+  }
+}
+@keyframes cards-3-circle-60 {
+  0% {
+    top: 10px;
+    left: 30px;
+  }
+  5% {
+    top: 50px;
+    left: 90px;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 10px;
+    left: 100px;
     width: 20px;
     height: 20px;
   }
